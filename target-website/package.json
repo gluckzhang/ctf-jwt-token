@@ -1,0 +1,14 @@
+{
+  "name": "ctf-jwt-token",
+  "version": "1.0.0",
+  "description": "A simple website which contains a vulnerability in JWT token",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "level": "5.0.1",
+    "jsonwebtoken": "0.4.0",
+    "cookies": "0.7.3"
+  }
+}
