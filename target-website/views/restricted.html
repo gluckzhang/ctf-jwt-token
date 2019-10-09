@@ -1,14 +1,25 @@
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Authenticated!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
-</head>
-<body>
-  <h1> You Authenticated! </h1>
-  <form action="/logout" method="GET">
-    <!-- Log Out of the app -->
-    <input type="submit" class="btn btn-danger" value="logout"  />
-  </form>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Authentication with JSON Web Tokens</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
+    <style type="text/css">
+      .form-signin {
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-center"><h1> Hello, longz! You have logged in as a common user. </h1></div>
+    <form class="form-signin" action="/logout" method="GET">
+      <div class="text-center mb-4">
+        <!-- Log Out of the app -->
+        <input type="submit" class="btn btn-danger" value="logout" />
+      </div>
+    </form>
+  </body>
 </html>

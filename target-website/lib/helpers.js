@@ -76,7 +76,7 @@ function authSuccess(req, res, role) {
 }
 
 // lookup person in "database"
-var u = { un: 'masterbuilder', pw: 'itsnosecret', role: 'user' };
+var u = { un: 'longz', pw: 'gogogo', role: 'user' };
 
 // handle authorisation requests
 function authHandler(req, res){
@@ -150,7 +150,7 @@ function validate(req, res, callback) {
 
 function notFound(res) {
   res.writeHead(404, {'content-type': 'text/plain'});
-  return res.end('Not Found');
+  return res.end('404 Not Found');
 }
 
 function home(res) {
@@ -179,8 +179,10 @@ function logout(req, res, callback) {
         });
       }
       cookies.set('token');
-      res.writeHead(200, {'content-type': 'text/plain'});
-      res.end('Logged Out!');
+      res.writeHead(302, {
+        'Location': '/'
+      });
+      res.end();
       return callback(res);
     });
   } else {
