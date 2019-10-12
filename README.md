@@ -35,9 +35,10 @@ docker build -t IMAGE_TAG .
 
 The goal of this attack is to extract the information which should be only seen by admin users. By default, the attacker could only get a common user account to experience the website. By modifying the JWT token, the attacher spoofs the server that he logs in as a admin.
 
-Use the following script to conduct the attack:
+Use the following Python3 script to conduct the attack:
 
 ```
+pip install -r requirements.txt
 python give_me_the_flag.py -l LOGIN_URL -u USERNAME -p PASSWORD
 ```
 
