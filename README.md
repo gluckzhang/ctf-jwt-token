@@ -1,6 +1,6 @@
 # ctf-jwt-token
 
-An example about a vulnerability in the early JWT token node.js library.
+An example of a vulnerability in the early JWT token node.js library.
 
 ## Basic Introduction to JWT Token
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 python give_me_the_flag.py -l LOGIN_URL -u USERNAME -p PASSWORD
 ```
 
-A screencast to show every step: TODO
+A screencast to show every step: https://youtu.be/y2dWWnLmygs
 
 ## Background Theory of The Exploit
 
