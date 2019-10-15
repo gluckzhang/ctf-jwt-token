@@ -20,7 +20,7 @@ The vulnerable website has been dockerized and published on [DockerHub](https://
 docker run --rm -p 8080:8080 gluckzhang/ctf-jwt-token
 ```
 
-After that the website is avaliable via `http://localhost:8080`.
+After that, the website is available via `http://localhost:8080`.
 
 ### Build The Docker Image by Yourself
 
@@ -33,7 +33,7 @@ docker build -t IMAGE_TAG .
 
 ## How to Conduct The Attack
 
-The goal of this attack is to extract the information which should be only seen by admin users. By default, the attacker could only get a common user account to experience the website. By modifying the JWT token, the attacher spoofs the server that he logs in as a admin.
+The goal of this attack is to extract the information which should be only seen by admin users. By default, the attacker could only get a common user account to experience the website. By modifying the JWT token, the attacker spoofs the server that he logs in as an admin.
 
 Use the following Python3 script to conduct the attack:
 
@@ -50,7 +50,7 @@ According to the standard of JWT token, a special algorithm `none` should be alw
 
 Since the demo website uses a JWT token to claim a login user's role, we will update the token to 1) change the algorithm into `none` and 2) change the user role into `admin`.
 
-Actually there is another vulerability which is related to JWT token[[2]](https://medium.com/101-writeups/hacking-json-web-token-jwt-233fe6c862e6). If the token declares to use `HS256` algorithm to encrypt the payload, the signature will be verified with the public key as secret key. Since it is easy to obtain the website server's public key, we could sign the payload by ourselves. Due to the limited time, this demo project does not implement that case.
+Actually there is another vulerability which is related to JWT token[[2]](https://medium.com/101-writeups/hacking-json-web-token-jwt-233fe6c862e6). If the token declares to use `HS256` algorithm to encrypt the payload, the signature will be verified with the public key as the secret key. Since it is easy to obtain the website server's public key, we could sign the payload by ourselves. Due to the limited time, this demo project does not implement that case.
 
 ## References
 
