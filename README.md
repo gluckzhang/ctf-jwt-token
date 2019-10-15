@@ -8,7 +8,7 @@ According to standard [RFC 7519](https://tools.ietf.org/html/rfc7519), JSON Web 
 
 ## How to Install The Vulnerable Component
 
-The vulnerable component is presented as a simple website which is written in node.js. This application uses username and password to authenticate a login first, then it also generates a JWT token for the user to claim the user role. The token is saved in cookies and checked whenever the user tries to visit some restricted pages.
+The vulnerable component is presented as a simple website which is written in node.js. The implementation is modified from GitHub repo [dwyl/learn-json-web-tokens](https://github.com/dwyl/learn-json-web-tokens) which holds a MIT license. This application uses username and password to authenticate a login first, then it also generates a JWT token for the user to claim the user role. The token is saved in cookies and checked whenever the user tries to visit some restricted pages.
 
 In this website, there are two different user roles: common user, admin user. The content of the main page after logging in is different. The flag is put on the admin main page. However, a visitor only has a demo account, which is a common user.
 
@@ -57,3 +57,4 @@ Actually there is another vulerability which is related to JWT token[[2]](https:
 - [Critical vulnerabilities in JSON Web Token libraries](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/)
 - [Hacking JSON Web Token (JWT)](https://medium.com/101-writeups/hacking-json-web-token-jwt-233fe6c862e6)
 - [npm jsonwebtoken v0.4.0](https://www.npmjs.com/package/jsonwebtoken/v/0.4.0)
+- [Learn how to use JSON Web Token (JWT) to secure your next Web App! (Tutorial/Example with Tests)](https://github.com/dwyl/learn-json-web-tokens)
